@@ -74,8 +74,9 @@ describe('HeroDetailComponent', () => {
       expect(mockHeroService.updateHero).toHaveBeenCalled();
     }));
 
-    /* using Angular's async helper function in order to deal with promises */
-    fit('should call updateHero when save is called V2', async(() => {
+    /* using Angular's async helper function in order to deal with promises.
+      We could have used the fakeAsync() function with ticks() instead */
+    it('should call updateHero when save is called V2', async(() => {
       // Arrange:
       mockHeroService.updateHero.and.returnValue(of({}));
       fixture.detectChanges();

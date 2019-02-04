@@ -1,0 +1,10 @@
+<a class="col-1-4" routerLink="/detail/{{hero.id}}"
+  (mouseenter)="setHighlight($event)"
+  (mouseleave)="setHighlight($event)">
+
+  <!-- <div class="module hero highlight"> -->
+    <div class="module hero" [class.highlight]="highlighted">
+    <h4>{{hero.name}}</h4>
+    <p>Power: {{hero.strength | strength}}
+  </div>
+</a>

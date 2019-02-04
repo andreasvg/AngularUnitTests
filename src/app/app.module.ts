@@ -18,6 +18,9 @@ import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
 import { StrengthPipe } from './strength/strength.pipe';
 import { HeroComponent } from './hero/hero.component';
+import { BlockLinkComponent } from './block-link/block-link.component';
+import { InterestPickerComponent } from './interest-picker/interest-picker.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   imports: [
@@ -41,7 +44,10 @@ import { HeroComponent } from './hero/hero.component';
     MessagesComponent,
     HeroSearchComponent,
     StrengthPipe,
-    HeroComponent
+    HeroComponent,
+    BlockLinkComponent,
+    InterestPickerComponent,
+    PersonComponent
   ],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]
