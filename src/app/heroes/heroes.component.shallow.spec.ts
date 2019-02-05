@@ -57,4 +57,28 @@ describe('HeroesComponent (shallow tests', () => {
 
     expect(fixture.debugElement.queryAll(By.css('li')).length).toBe(3);
   });
+
+  it('should show a message if no heroes were returned from the service', () => {
+    mockHeroService.getHeroes.and.returnValue(of([]));
+    fixture.detectChanges();
+
+    // Assert:
+    // check the DOM:
+    const alertElem = fixture.debugElement.query(By.css('.alert'));
+    expect(alertElem).toBeTruthy();
+
+    // check the component property:
+    expect(fixture.componentInstance.noDataFound).toBe(true);
+  });
+
+  it('should not show a message if some heroes were returned from the service', () => {
+    mockHeroService.getHeroes.and.returnValue(of(HEROES));
+    fixture.detectChanges();
+
+    const alertElem = fixture.debugElement.query(By.css('.alert'));
+    expect(alertElem).toBeFalsy();
+
+    // check the component property:
+    expect(fixture.componentInstance.noDataFound).toBe(false);
+  });
 });

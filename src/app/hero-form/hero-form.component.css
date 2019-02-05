@@ -1,0 +1,25 @@
+#heroForm {
+  margin: 30px 10px 10px 5px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.input-box {
+  width: 500px;
+}
+
+.validation-error {
+  border-width: 1px;
+  border-color: rgb(94, 9, 9);
+  background-color: rgb(240, 184, 184);
+  color: rgb(94, 9, 9);
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

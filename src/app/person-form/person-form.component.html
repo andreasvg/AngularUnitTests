@@ -1,0 +1,13 @@
+<form #form="ngForm">
+
+      <label>First name:</label>
+      <input #firstName="ngModel"
+        type="text"
+        name="firstName"
+        [(ngModel)]="firstNameText"
+        required />
+
+      <div class="validation-error" *ngIf="firstName.invalid">
+          Please enter a valid first name
+      </div>
+</form>

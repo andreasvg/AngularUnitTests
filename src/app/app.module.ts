@@ -21,6 +21,8 @@ import { HeroComponent } from './hero/hero.component';
 import { BlockLinkComponent } from './block-link/block-link.component';
 import { InterestPickerComponent } from './interest-picker/interest-picker.component';
 import { PersonComponent } from './person/person.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+import { PersonFormComponent } from './person-form/person-form.component';
 
 @NgModule({
   imports: [
@@ -47,7 +49,9 @@ import { PersonComponent } from './person/person.component';
     HeroComponent,
     BlockLinkComponent,
     InterestPickerComponent,
-    PersonComponent
+    PersonComponent,
+    HeroFormComponent,
+    PersonFormComponent
   ],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]
