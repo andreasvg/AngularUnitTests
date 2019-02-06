@@ -2,6 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('HeroService', () => {
   let mockMessageService;
@@ -40,6 +41,27 @@ describe('HeroService', () => {
       httpTestingController.verify();
     });
   });
+
+  it('should return undefined when the server returns a 404', () => {
+    let response: any;
+    let errResponse: any;
+
+    // Act:
+    service.getHero(4000).subscribe(res => response = res, err => errResponse = err);
+
+    // configure the mock Http service to return a 404:
+    const req = httpTestingController.expectOne('api/heroes/4000');
+    const mockErrorResponse = new HttpErrorResponse({
+      error: 'test 404 error',
+      status: 404, statusText: 'Not Found'
+    });
+    req.flush('', mockErrorResponse);
+
+    // Assert:
+    expect(response).toBe(undefined);
+    console.log(errResponse);
+  });
+
 });
 
 
