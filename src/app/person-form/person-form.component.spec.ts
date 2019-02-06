@@ -11,7 +11,7 @@ describe('PersonFormComponent', () => {
     TestBed.configureTestingModule({
       imports: [ FormsModule ],
       declarations: [ PersonFormComponent ]
-    });
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PersonFormComponent);
     fixture.detectChanges();

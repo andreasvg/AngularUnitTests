@@ -8,16 +8,16 @@ describe('InterestPickerComponent', () => {
   let fixture: ComponentFixture<InterestPickerComponent>;
 
 
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ FormsModule ],
       declarations: [ InterestPickerComponent ]
-    });
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InterestPickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();
